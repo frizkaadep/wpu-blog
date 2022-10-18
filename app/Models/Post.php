@@ -15,14 +15,16 @@ class Post extends Model
     // fungsi mengecualikan / tidak boleh di isi oleh fungsi 'create'
     protected $guarded = ['id'];
 
-    // relasi db ke category
+    // relasi db ke table category
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
 
-    public function user()
+    // relasi DB ke table User
+    public function author()
     {
-        return $this->belongsTo(User::class);
+        // 'user_id' alias untuk 'author' yg tidak ada di table user, field author
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
