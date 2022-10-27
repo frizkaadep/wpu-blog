@@ -14,6 +14,7 @@ class Post extends Model
 
     // fungsi mengecualikan / tidak boleh di isi oleh fungsi 'create'
     protected $guarded = ['id'];
+    protected $with = ['category','author'];
 
     // relasi db ke table category
     public function category()
