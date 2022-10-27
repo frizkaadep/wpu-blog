@@ -11,12 +11,12 @@ class PostController extends Controller
     public function index()
     {
         return view('posts', [
-            "title" => "Posts all",
+            "title" => "All Posts",
             // menampilkan semua data
             // "posts" => Post::all(),
 
             // mengurutkan data berdasarkan terakhir di buat
-            "posts" => Post::latest()->get()
+            "posts" => Post::with(['author','category'])->latest()->get()
         ]);
     }
     public function show(Post $post)
