@@ -45,6 +45,7 @@ class User extends Authenticatable
 
     public function posts()
     {
+        // 1 user memiliki banyak post
         return $this->HasMany(Post::class);
     }
 }
