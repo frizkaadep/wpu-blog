@@ -25,7 +25,6 @@ class PostController extends Controller
 
         return view('posts', [
             "title" => "All Posts" . $title,
-            "active" => "posts",
 
             // menampilkan semua data
             // "posts" => Post::all(),
@@ -38,7 +37,6 @@ class PostController extends Controller
     {
         return view('post', [
             "title" => "single post",
-            "active" => "posts",
             "post" => $post
         ]);
     }

@@ -57,4 +57,9 @@ class Post extends Model
         // 'user_id' alias untuk 'author' yg tidak ada di table user, field author
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }
