@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardPostController;
@@ -26,6 +27,7 @@ Route::get('/about', [AboutController::class, 'index']);
 
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
+
 Route::get('/categories', [CategoryController::class, 'index']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
@@ -41,3 +43,6 @@ Route::get('/dashboard', function () {
 
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+
+// fungsi 'except/kecuali' utk mebatasi access jadi show tidak akan bisa di akses
+Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
