@@ -1,5 +1,5 @@
 # wpu-blog
-repository for Learn at Web Prgramming Unpas (WPU) in playlist Belajar Laravel 8
+repository for Learn at <a href="https://www.youtube.com/c/WebProgrammingUNPAS">Web Prgramming Unpas (WPU)</a> in playlist Belajar Laravel 8 : 
 1. Belajar Laravel 8 _ 1. Intro
 2. Belajar Laravel 8 _ 2. Instalasi & Konfigurasi
 3. Belajar Laravel 8 _ 3. Struktur Folder, Routes & View
