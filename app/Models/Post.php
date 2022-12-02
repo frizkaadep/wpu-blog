@@ -15,6 +15,8 @@ class Post extends Model
 
     // fungsi mengecualikan / tidak boleh di isi oleh fungsi 'create'
     protected $guarded = ['id'];
+
+    // fungsi eager loading (eloq)
     protected $with = ['category', 'author'];
 
     public function scopeFilter($query, array $filters)
